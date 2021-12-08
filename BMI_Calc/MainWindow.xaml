@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BMI_Calc"
         mc:Ignorable="d"
-        Title="~~~~~~BMI Calculator~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" Height="700" Width="800">
+        Title="~~~~~~BMI Calculator~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" Height="700" Width="800" BorderBrush="Black" Background="#FFA0A0A0">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".5*"/>
@@ -40,7 +40,7 @@
 
         <Label Content="Weight (In LBS):" Grid.Column="1" Grid.Row="5"></Label>
 
-        <Label Content="Your BMI Is:" Grid.Column="4" Grid.Row="1"></Label>
+        <Label Content="Your BMI Is:" Grid.Column="4" Grid.Row="1" FontWeight="Bold" FontSize="14"></Label>
 
         <TextBox x:Name="First_Name_Box" Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5,4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
@@ -52,11 +52,15 @@
 
         <TextBox x:Name="Weight_LBS_Box" Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="5,4,0,0" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
-        <TextBlock x:Name="Your_BMI_Results" Grid.Column="4" HorizontalAlignment="Left" Margin="0,9,0,0" Grid.Row="2" TextWrapping="Wrap" Text="BMI Results" VerticalAlignment="Top" FontSize="24" Grid.ColumnSpan="2" Width="205"/>
+        <TextBlock x:Name="Your_BMI_Results" Grid.Column="4" HorizontalAlignment="Left" Margin="0,9,0,0" Grid.Row="2" TextWrapping="Wrap" Text="BMI Results" VerticalAlignment="Top" FontSize="24" Grid.ColumnSpan="2" Width="205" FontWeight="Bold">
+            <TextBlock.BindingGroup>
+                <BindingGroup Name="SeeBMI"/>
+            </TextBlock.BindingGroup>
+        </TextBlock>
 
-        <TextBlock x:Name="BMI_Message" Grid.Column="4" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Message:" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="BMI_Message" Grid.Column="4" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Message:" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="3" Width="356" Height="135" Grid.RowSpan="3"/>
 
-        <Button x:Name="Submit_BTN" Content="Submit" Grid.Column="1" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="6" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="Submit_BTN" Content="Submit" Grid.Column="1" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="6" VerticalAlignment="Top" Width="75" Click="Submit_BTN_Click"/>
 
         <Button x:Name="Clear_BTN" Content="Clear" Grid.Column="2" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="6" VerticalAlignment="Top" Width="75" Click="Clear_BTN_Click"/>
 
